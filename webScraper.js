@@ -18,7 +18,7 @@ var totalS = 0;
 var totalP = 0;
 var totalG = 0;
 
-async function scrape (url, lyrics, title){
+async function scrape (url, lyrics, title, i, arr){
     //Opens window
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -68,6 +68,16 @@ async function scrape (url, lyrics, title){
     console.log("Girl Count: ", countG);
     totalG = totalG + countG;
 
+    console.log("\nTotals After {" + i + "}");
+    console.log("Totals:")
+    console.log("B-Word Total:", totalB);
+    console.log("H-Word Total:", totalH);
+    console.log("C-Word Total:", totalC);
+    console.log("S-Word Total:", totalS);
+    console.log("P-Word Total:", totalP);
+    console.log("Girl Total:", totalG);
+    console.log("\n");
+
     browser.close();
 }
 
@@ -85,14 +95,5 @@ console.log("loading content (may take awhile)");
 // Goes through the array of songs and scrapes them
 for(i=0; i < link.length; i++){
     console.log("start scrape: {" + i + "}");
-    scrape(link[i], lyrics[i], title[i]);
-
-    if(i == link.length){
-        console.log("B-Word Total:", totalB);
-        console.log("H-Word Total:", totalH);
-        console.log("C-Word Total:", totalC);
-        console.log("S-Word Total:", totalS);
-        console.log("P-Word Total:", totalP);
-        console.log("Girl Total:", totalG);
-    }
+    scrape(link[i], lyrics[i], title[i], i, link);
 }
