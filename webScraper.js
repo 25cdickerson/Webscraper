@@ -20,6 +20,7 @@ var totalG = 0;
 var totalA = 0;
 var totalW = 0;
 var totalD = 0;
+var totalT = 0;
 
 async function scrape (url, lyrics, title, i){
     //Opens window
@@ -86,6 +87,11 @@ async function scrape (url, lyrics, title, i){
     console.log("D-Word Count: ", countD);
     totalD = totalD + countD;
 
+    // T-Word
+    var countT = countOccurences(rawTxt, "thot") + countOccurences(rawTxt, "Thot");
+    console.log("T-Word Count: ", countT);
+    totalT = totalT + countT;
+
 
     console.log("\nTotals After {" + i + "}");
     console.log("Totals:")
@@ -98,6 +104,7 @@ async function scrape (url, lyrics, title, i){
     console.log("A-Word Total: ",totalA);
     console.log("W-Word Total: ",totalW);
     console.log("D-Word Total: ",totalD);
+    console.log("T-Word Total: ",totalT);
     console.log("\n");
 
     browser.close();
