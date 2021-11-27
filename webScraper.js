@@ -110,7 +110,7 @@ async function scrape (url, lyrics, title, i){
     browser.close();
 }
 
-// Array of Top 25 Rap songs according to billboard
+// Array of Top 20 Rap songs according to billboard (Men's)
 var link = ['https://lyricsondemand.com/l/lilnasxlyrics/industrybabylyrics.html', 'https://thelyricsland.com/escape-plan-lyrics/', 'https://www.lyricsondemand.com/d/drakelyrics/way2sexylyrics.html', 'https://www.lyricsondemand.com/d/drakelyrics/knifetalklyrics.html', 'https://www.lyricsondemand.com/n/nardowicklyrics/whowantsmokelyrics.html', 'https://www.lyricsondemand.com/b/babykeemlyrics/familytieslyrics.html', 'https://lyricsondemand.com/b/blxstlyrics/chosenlyrics.html', 'https://www.lyricsondemand.com/m/meekmilllyrics/sharinglocationslyrics.html', 'https://www.lyricsondemand.com/d/drakelyrics/fairtradelyrics.html', 'https://www.lyricsondemand.com/y/youngthuglyrics/bubblylyrics.html', 'https://www.lyricsondemand.com/l/lattolyrics/bigenergylyrics.html', 'https://www.lyricsondemand.com/k/kanyewestlyrics/hurricanelyrics.html', 'http://www.lyricsondemand.com/n/nlechoppalyrics/jumpinlyrics.html', 'https://lyricsondemand.com/t/travisscottlyrics/mafialyrics.html', 'https://www.lyricsondemand.com/d/drakelyrics/girlswantgirlslyrics.html', 'http://www.lyricsondemand.com/y/yungbleulyrics/baddestlyrics.html', 'http://www.lyricsondemand.com/0/42dugglyrics/maybachlyrics.html', 'https://lyricsondemand.com/g/gunnalyrics/tooeasylyrics.html', 'https://lyricsondemand.com/k/kanyewestlyrics/praisegodlyrics.html', 'https://letra-lyric.blogspot.com/2021/11/super-gremlin-kodak-black-lyrics.html'];
 
 // XPATH of the lyrics corresponding to each song
@@ -122,7 +122,23 @@ var title = ['//*[@id="ldata"]/a[2]', '//*[@id="post-4580"]/div[1]/header/h1', '
 console.log("loading content (may take awhile)");
 
 // Goes through the array of songs and scrapes them
-for(i=0; i < link.length; i++){
+/*for(i=0; i < link.length; i++){
     console.log("start scrape: {" + i + "}");
     scrape(link[i], lyrics[i], title[i], i);
+}*/
+
+// console.log("////////////Starting Women's////////////")
+
+// Array of Top 20 Rap songs according to billboard (Women's)
+var link2 = ['https://www.lyricsondemand.com/a/aliciakeyslyrics/gangstalovinlyrics.html', 'https://www.elyrics.net/read/t/tokyo-jetz-lyrics/six-flags-(feat.-plies)-lyrics.html', 'https://www.lyricsondemand.com/l/lilkimlyrics/crushonyoulyrics.html', 'https://www.lyricsondemand.com/m/megantheestallionlyrics/thotshitlyrics.html', 'https://lyricsondemand.com/c/cardiblyrics/uplyrics.html', 'https://lyricsondemand.com/s/saweetielyrics/bestfriendlyrics.html', 'https://www.lyricsondemand.com/d/dojacatlyrics/getintoityuhlyrics.html', 'https://www.lyricsondemand.com/c/citygirlslyrics/twerkulatorlyrics.html', 'https://lyricsondemand.com/c/cardiblyrics/waplyrics.html', 'http://www.lyricsondemand.com/a/ashnikkolyrics/slumberpartylyrics.html', 'https://www.lyrics.com/lyric-lf/3370706/Saweetie/Risky', 'https://www.lyricsondemand.com/d/dojacatlyrics/womanlyrics.html', 'http://www.lyricsondemand.com/m/megantheestallionlyrics/doitonthetiplyrics.html', 'http://www.lyricsondemand.com/m/megantheestallionlyrics/whatsnewlyrics.html', 'https://www.lyricsondemand.com/i/iggyazalealyrics/brazillyrics.html', 'https://lyricsondemand.com/r/riconastylyrics/ownitlyrics.html', 'https://www.lyricsondemand.com/b/bialyrics/skatelyrics.html', 'https://lyricsondemand.com/c/coileraylyrics/bigpurrprrddlyrics.html', 'https://www.lyricsondemand.com/m/megantheestallionlyrics/pipeuplyrics.html', 'https://www.lyricsondemand.com/m/megantheestallionlyrics/kittykatlyrics.html'];
+
+// XPATH lyrics
+var lyrics2 = ['//*[@id="ldata"]/div[3]', '//*[@id="inlyr"]', '//*[@id="ldata"]/div[4]', '//*[@id="sbmtlyr"]', '//*[@id="sbmtlyr"]', '//*[@id="ldata"]/div[4]', '//*[@id="sbmtlyr"]', '//*[@id="sbmtlyr"]', '//*[@id="ldata"]/div[4]', '//*[@id="sbmtlyr"]', '//*[@id="lyric-body-text"]', '//*[@id="ldata"]/div[3]', '//*[@id="sbmtlyr"]', '//*[@id="sbmtlyr"]', '//*[@id="sbmtlyr"]', '//*[@id="sbmtlyr"]', '//*[@id="sbmtlyr"]', '//*[@id="ldata"]/div[3]', '//*[@id="sbmtlyr"]', '//*[@id="sbmtlyr"]'];
+
+// XPATH titles
+var title2 = ['//*[@id="ldata"]/a[2]', '//*[@id="lyr"]/strong', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="lyric-title-text"]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]', '//*[@id="ldata"]/a[2]'];
+
+for(x=0; x < link2.length; x++){
+    console.log("start scrape: {" + x + "}");
+    scrape(link2[x], lyrics2[x], title2[x], x);
 }
